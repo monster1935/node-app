@@ -1,11 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <div class="app-header">
+      <app-header></app-header>
+    </div>
+    <div class="app-content">
+        <div class="app-nav">
+          <app-nav></app-nav>
+        </div>
+        <div class="app-right">
+            <router-view></router-view>
+        </div>
+    </div>
+
   </div>
 </template>
 
 <script>
+
+import AppHeader from './components/common/AppHeader.vue';
+import AppNav from './components/common/AppNav.vue';
 export default {
   name: 'app',
   mounted () {
@@ -19,17 +32,45 @@ export default {
     }).catch((err) => {
       console.error(err);
     });
+  },
+  components: {
+    AppHeader,
+    AppNav
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  #app{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+  }
+  .app-header{
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 2;
+
+  }
+  .app-content{
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+  }
+  .app-nav{
+    position: relative;
+    flex: 0 0 280px;
+    background: #EFF2F7;
+  }
+  .app-right{
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+
+  }
 </style>
