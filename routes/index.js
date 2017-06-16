@@ -1,8 +1,5 @@
 
-var test = require('./test.js');
-var test1 = require('./test1.js');
-
+var v1 = require('./v1.js');
 module.exports = function(app) {
-  app.use('/test', test);
-  app.use('/test1', test1);
+  app.use('/v1', v1);
 };

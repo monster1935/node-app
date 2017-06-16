@@ -5,9 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index.js');
-var index = require('./routes/index');
-var users = require('./routes/users');
-
+var db = require('./mongodb/db.js');
+// var history = require('connect-history-api-fallback');
 var app = express();
 
 // view engine setup
@@ -41,5 +40,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+// app.use(history());
 module.exports = app;

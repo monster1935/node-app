@@ -21,18 +21,7 @@ import AppHeader from './components/common/AppHeader.vue';
 import AppNav from './components/common/AppNav.vue';
 export default {
   name: 'app',
-  mounted () {
-    this.$http.get('/test').then((res) => {
-      console.log('res:', res);
-    }).catch((err) => {
-      console.error(err);
-    });
-    this.$http.get('/test1').then((res) => {
-      console.log('res:', res);
-    }).catch((err) => {
-      console.error(err);
-    });
-  },
+  mounted () {},
   components: {
     AppHeader,
     AppNav
