@@ -5,6 +5,7 @@ study node app
 - express-generator 快速生成express项目
 - supervisor 监听代码变化，热替换
 - axios 用于前端请求
+- mongoose 用于连接mongodb
 
 ## 配合vue-cli搭建前端页面
 
